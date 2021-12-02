@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// call the home controller
+Route::get('/home',[ App\Http\Controllers\Homecontroller::class,'index'])->name('home.index');
+
+Route::get('/inside/{name?}',[ App\Http\Controllers\Homecontroller::class,'inside']);
